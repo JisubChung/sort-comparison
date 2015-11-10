@@ -6,10 +6,15 @@ public class InsertionSort {
 			int key = A[j];
 			//Insert A[j] into the sorted sequence A[1...j-1]
 			int i = j-1;
-			while (i >= 0 && A[i] > key) {
+			while (i >= 0) {
 				comparisons++;
-				A[i + 1] = A[i];
-				i = i - 1;
+				if(A[i] > key) {
+					A[i + 1] = A[i];
+					i = i - 1;
+				}
+				else {
+					break;
+				}
 			}
 			A[i+1] = key;
 		}
